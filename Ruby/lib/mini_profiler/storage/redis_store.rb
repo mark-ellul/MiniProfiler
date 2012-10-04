@@ -36,7 +36,7 @@ module Rack
 
       def redis
         require 'redis' unless defined? Redis
-        Redis.new @args
+        @redis_conn ||= Redis.new @args
       end
 
     end
